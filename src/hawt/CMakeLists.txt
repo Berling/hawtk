@@ -13,5 +13,6 @@ target_compile_options(hawt
 	$<$<CXX_COMPILER_ID:Clang>:-stdlib=libc++>)
 target_link_libraries(hawt
 	PUBLIC
-	$<$<CXX_COMPILER_ID>:c++>)
+	$<$<CXX_COMPILER_ID:Clang>:c++>
+	freetype2)
 export(TARGETS hawt FILE hawt.cmake)

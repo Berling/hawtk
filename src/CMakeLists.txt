@@ -1,6 +1,19 @@
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 project(hawt VERSION 0.0.0 LANGUAGES CXX)
 
+if (NOT CMAKE_BUILD_TYPE)
+	message("-- No build type specified")
+	message("--   Setting build type to debug")
+	set(CMAKE_BUILD_TYPE Debug)
+endif()
+
+find_package(Freetype REQUIRED)
+add_library(freetype2 SHARED IMPORTED)
+set_property(TARGET freetype2 PROPERTY
+	INTERFACE_INCLUDE_DIRECTORIES ${FREETYPE_INCLUDE_DIRS})
+set_property(TARGET freetype2 PROPERTY
+	IMPORTED_LOCATION ${FREETYPE_LIBRARIES})
+
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/debug)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/debug)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/debug)

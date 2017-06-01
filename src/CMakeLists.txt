@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
-project(hawt VERSION 0.0.0 LANGUAGES CXX)
+project(hawtk VERSION 0.0.0 LANGUAGES CXX)
 
 if (NOT CMAKE_BUILD_TYPE)
 	message("-- No build type specified")
@@ -29,4 +29,4 @@ if (DOXYGEN_FOUND)
 		WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 		COMMENT "Generating API documentation with Doxygen" VERBATIM)
 endif(DOXYGEN_FOUND)
-# add_subdirectory(hawt)
+add_subdirectory(hawtk)

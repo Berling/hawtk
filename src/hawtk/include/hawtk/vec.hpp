@@ -9,7 +9,7 @@
  * \brief
  * The main namespace.
  */
-namespace hawt {
+namespace hawtk {
 	/**
 	 * \brief
 	 * \c hawt::tvec is a mathematical n-dimensional vector.

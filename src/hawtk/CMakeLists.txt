@@ -1,6 +1,7 @@
 project(hawtk VERSION 0.0.0 LANGUAGES CXX)
 
-add_library(hawtk)
+add_library(hawtk
+	src/context.cpp)
 target_include_directories(hawtk
 	PUBLIC
 	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

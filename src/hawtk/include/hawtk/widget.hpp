@@ -105,12 +105,6 @@ namespace hawtk {
 			_children.push_back(widget);
 		}
 
-		template <typename T, typename... Args>
-		T& emplace_back(Args&&... args) {
-			_children.emplace_back(std::make_unique<T>(std::forward<Args>(args)...));
-			return _children.back();
-		}
-
 	private:
 		virtual void draw(context& context) = 0;
 	};

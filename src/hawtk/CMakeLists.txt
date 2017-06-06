@@ -16,4 +16,10 @@ target_link_libraries(hawtk
 	PUBLIC
 	$<$<CXX_COMPILER_ID:Clang>:c++>
 	freetype2)
+install(TARGETS hawtk EXPORT hawtk
+	RUNTIME DESTINATION bin
+	LIBRARY DESTINATION lib
+	ARCHIVE DESTINATION lib)
+install(EXPORT hawtk DESTINATION lib)
+install(DIRECTORY include/hawtk DESTINATION include)
 export(TARGETS hawtk FILE hawtk.cmake)

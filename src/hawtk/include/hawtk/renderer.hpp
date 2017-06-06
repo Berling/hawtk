@@ -11,13 +11,17 @@ namespace hawtk {
 	class renderer {
 		friend class context;
 
-	private:
-		renderer() = default;
+	public:
 		virtual ~renderer() = default;
+
+	protected:
+		renderer() = default;
+
+	private:
 		virtual void draw(const std::vector<vertex>& vertices) = 0;
-		virtual void enable_alpha_blending();
-		virtual void disable_alpha_blending();
-		virtual void enable_scissor_test(const vec2& offset, const vec2& bounds);
-		virtual void disable_scissor_test();
+		virtual void begin_pass() = 0;
+		virtual void end_pass() = 0;
+		virtual void enable_scissor_test(const vec2& offset, const vec2& bounds) = 0;
+		virtual void disable_scissor_test() = 0;
 	};
 }

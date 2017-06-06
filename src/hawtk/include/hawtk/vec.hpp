@@ -54,7 +54,7 @@ namespace hawtk {
 		 * \param args the list of values from which to construct the vector
 		 * \tparam Args the types of the arguments
 		 */
-		template <typename... Args>
+		template <typename... Args, typename = typename std::enable_if<sizeof...(Args) == N>::type>
 		tvec(Args&&... args) : _elements{{args...}} {}
 
 		/**
